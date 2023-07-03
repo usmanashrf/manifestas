@@ -8,7 +8,7 @@ import { MdLocationOn } from "react-icons/md";
 export default function MateMap() {
   let [showPopup, setShowPopup] = useState<boolean>();
   const[freindspinData, setFreindspinData] = useState(friendsPins);
-	const [selectedMarker, setSelectedMarker] = useState(null);
+	const [selectedMarkerId, setSelectedMarkerId] = useState(null);
 	const mapRef = useRef(null);
 
 
@@ -21,7 +21,9 @@ useEffect(()=>{
   const handleMarkerClick = (pin:any) => {
     console.log("Before updating",showPopup);
     console.log("Name of Friebd",pin?.Name);
-    setTimeout(()=>(setShowPopup(true)),10);
+    setTimeout(()=>{
+      setShowPopup(true)
+      setSelectedMarkerId(pin.id)},10);
     // setShowPopup(true);
     console.log("After updating",showPopup);
   }
@@ -55,7 +57,7 @@ useEffect(()=>{
                 </button>
               </Marker>
 
-              {showPopup ? (
+              {showPopup && pin.id === selectedMarkerId ? (
                 <Popup
                   offset={25}
                   latitude={pin.Location.Latitude}
