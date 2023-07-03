@@ -18,7 +18,6 @@ export default function MateMap() {
 // Friends Pin will be coming from backend API
 useEffect(()=>{
   setFreindspinData(friendsPins)
-  console.log(freindspinData);
 },[])
 
   const handleMarkerClick = (pin:any) => {
