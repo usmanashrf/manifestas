@@ -4,6 +4,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useState, useRef } from 'react';
 import friendsPins from "@/assets/FreindsPinsData";
 import { MdLocationOn } from "react-icons/md";
+import FriendsPopupCard from '../basic/FriendsPopupCard';
+import { Skeleton } from '../ui/skeleton';
+import Image from 'next/image';
 
 export default function MateMap() {
   let [showPopup, setShowPopup] = useState<boolean>();
@@ -19,13 +22,9 @@ useEffect(()=>{
 },[])
 
   const handleMarkerClick = (pin:any) => {
-    console.log("Before updating",showPopup);
-    console.log("Name of Friebd",pin?.Name);
     setTimeout(()=>{
       setShowPopup(true)
       setSelectedMarkerId(pin.id)},10);
-    // setShowPopup(true);
-    console.log("After updating",showPopup);
   }
   return (
     <div className="flex-1 h-full">
@@ -45,8 +44,8 @@ useEffect(()=>{
             <div>
               <Marker
                 key={index}
-                longitude={pin.Location.Longitude}
-                latitude={pin.Location.Latitude}
+                longitude={pin.location.Longitude}
+                latitude={pin.location.Latitude}
               >
                 <button
                   type="button"
@@ -60,30 +59,21 @@ useEffect(()=>{
               {showPopup && pin.id === selectedMarkerId ? (
                 <Popup
                   offset={25}
-                  latitude={pin.Location.Latitude}
-                  longitude={pin.Location.Longitude}
+                  latitude={pin.location.Latitude}
+                  longitude={pin.location.Longitude}
                   onClose={() => {
                     setShowPopup(false);
                   }}
                   closeButton={false}
+                  className='rounded-lg shadow-zinc-600'
                 >
-                  <h3 className="">{pin.Name}</h3>
-                  <div className="">
-                    {/* <label className={classes.popupLabel}>Code: </label>
-							<span>{selectedMarker.airport.code}</span>
-							<br />
-							<label className={classes.popupLabel}>Country: </label>
-							<span>{selectedMarker.airport.country}</span>
-							<br />
-							<label className={classes.popupLabel}>Website: </label>
-							<Link
-								href={selectedMarker.airport.url === "" ? "#" : selectedMarker.airport.url}
-								target={selectedMarker.airport.url === "" ? null : "_blank"}
-								className={classes.popupWebUrl}
-							>
-								{selectedMarker.airport.url === "" ? "Nil" : selectedMarker.airport.url}
-							</Link> */}
-                  </div>
+                  <FriendsPopupCard 
+                  name={pin.name}
+                  profile={pin.profile} 
+                  location={pin.location}
+                  metPlace={pin.metAt}
+                  details={pin.details}
+                   />
                 </Popup>
               ) : null}
             </div>
