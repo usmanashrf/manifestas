@@ -40,7 +40,7 @@ useEffect(()=>{
 
         {freindspinData.map((pin, index) => {
           return (
-            <div>
+            <div >
               <Marker
                 key={index}
                 longitude={pin.location.Longitude}
