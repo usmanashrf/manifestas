@@ -1,10 +1,7 @@
-import Image from "next/image";
-import { Skeleton } from "../ui/skeleton";
-import profile from '/public/profile.png';
 import { Button } from "../ui/button";
 import { useRouter } from 'next/navigation';
 
-export default function FriendsPopupCard({name,location,profile, metPlace,details}:any) {
+export default function FriendsPopupCard({id,name,location,profile, metPlace,details}:any) {
     console.log("Freinds popup Cards =====",name,profile,location);
     const router = useRouter();
   return (
@@ -19,10 +16,8 @@ export default function FriendsPopupCard({name,location,profile, metPlace,detail
         <div className="h-4 w-[200px]">{details}</div>
         
       </div>    
-      <Button onClick={() => router.push('/friend-details')} className="self-end mt-10 w-20 py-2 px-4 bg  text-[#0a3d62] 
+      <Button onClick={() => router.push(`/friend-details/${id}`)} className="self-end mt-10 w-20 py-2 px-4 bg  text-[#0a3d62] 
         hover:bg-[#0a3d62] bg-white hover:text-white rounded"> Details</Button>
-      {/* <button className="self-end mt-10 w-20 py-2 px-4  text-[#0a3d62] 
-        hover:bg-[#0a3d62] hover:text-white rounded ">Details</button> */}
     </div>
   );
 }

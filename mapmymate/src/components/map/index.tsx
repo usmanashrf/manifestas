@@ -66,7 +66,8 @@ useEffect(()=>{
                   closeButton={false}
                   className='rounded-lg shadow-zinc-600'
                 >
-                  <FriendsPopupCard 
+                  <FriendsPopupCard
+                  id={pin.id} 
                   name={pin.name}
                   profile={pin.profile} 
                   location={pin.location}

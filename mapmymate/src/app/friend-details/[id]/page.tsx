@@ -48,8 +48,8 @@ Images:[
 profilePic:"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=300",
 
 }
-export default function page() {
-    //props:freindDetails
+export default function page({params}:{params: { id: string }}) {
+    //here call api and get freindDetails by using params.id
   return (
     <div>
          <FreindDetails
