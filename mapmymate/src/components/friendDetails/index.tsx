@@ -22,37 +22,35 @@ export default function FreindDetails(data:freindDetails) {
     let userAge = age(data.dateOfBirth);
 
   return (
-    <div>
+    <div className="flex flex-col">
         {/* Basic Details will be here */}
-        <div>
-           <BasicInfo
+           <BasicInfo 
            firstName={data.firstName}
            lastName={data.lastName}
            age={userAge}
            nationality={data.nationality}
            profilePic={data.profilePic}
             />
-        </div>
         {/* Description part */}
-        <div className="mx-16 my-7">
+        <div className="md:mx-16 mx-2 my-7">
             <div className="text-lg font-bold text-[#0a3d62]">Description</div>
             <DataCard data={data.description}/>
             
         </div>
         {/* Meeting Dates */}
-        <div className="mx-16">
+        <div className="md:mx-16 mx-2">
             
             <div className="text-lg font-bold text-[#0a3d62]">Meeting Dates</div>
             <DataTable columns={columns} data={data.meetingDates}/>
         </div>
         {/* How we Met part */}
-        <div className="mx-16 my-7">
+        <div className="md:mx-16 mx-2 my-7">
             <div className="text-lg font-bold text-[#0a3d62]">How We Met</div>
             <DataCard data={data.howMet}/> 
         </div>
         {/* Images part */}
         <div>
-            <div className="mx-16 text-lg font-bold text-[#0a3d62]">Photos</div>
+            <div className="md:mx-16 mx-2 text-lg font-bold text-[#0a3d62]">Photos</div>
             <ImagesSlider images = {data.Images}/>
         </div>
     </div>

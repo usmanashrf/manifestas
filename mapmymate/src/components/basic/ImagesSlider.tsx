@@ -21,6 +21,41 @@ export default function ImageSlider({images}:any) {
         slidesToScroll: 1,
         draggable:true,
         arrows:true,
+        centerPadding:'100px',
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  initialSlide: 2
+                }
+              },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 320,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
       };
     
       const slider = useRef<Slider>(null);
@@ -43,7 +78,7 @@ export default function ImageSlider({images}:any) {
           };
       }, []);
   return (
-    <div className='pt-10 mx-[350px]' >
+    <div className='pt-10  mx-5' >
         {
              <Slider  {...settings} ref={slider}>
                 {

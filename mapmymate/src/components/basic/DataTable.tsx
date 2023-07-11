@@ -42,7 +42,7 @@ export const columns: ColumnDef<MeetingDates>[] = [
     })
    
     return (
-      <div className="rounded-md border bg-slate-100 w-[450px]">
+      <div className="rounded-md border bg-slate-100 md:w-[450px] md:ml-10">
         <Table>
           <TableHeader className="bg-slate-200">
             {table.getHeaderGroups().map((headerGroup) => (
