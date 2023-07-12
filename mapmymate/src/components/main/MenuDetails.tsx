@@ -20,7 +20,7 @@ export default function MenuDetails() {
         <div>MY</div>
         <div>MATE</div>
         </div>
-        <div className='opacity-100'>
+        <div className='opacity-100 h-[529px] overflow-y-auto'>
     {
       activeTab === "notifications" ?(
     <Notifications/>
