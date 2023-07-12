@@ -13,8 +13,8 @@ export default function MenuDetails() {
   const { activeTab,setActiveTab}= useStateContext();
    console.log(activeTab);
   return (
-    <div className="relative p-4 border-2 flex flex-col  items-center flex-1">
-      <div className="text-8xl flex flex-col mt-32 justify-center items-center font-black text-[#0a3d62] opacity-10 absolute">
+    <div className="relative p-4 border-2 flex flex-col  flex-1">
+      <div className="md:text-8xl text3xl flex flex-col mt-32 justify-center items-center font-medium md:font-black text-[#0a3d62] opacity-10 absolute">
        <Image className='grayscale-50' height={96} alt='logo' src={logo}/>
         <div>MAP</div>
         <div>MY</div>
