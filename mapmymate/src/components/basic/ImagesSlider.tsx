@@ -82,10 +82,10 @@ export default function ImageSlider({images}:any) {
         {
              <Slider  {...settings} ref={slider}>
                 {
-                    images.map((image:any)=>
+                    images.map((image:any,index:any)=>
                     {
                      return (
-                       <div>
+                       <div key={index}>
                          <Image className='object-cover' width={180} height={180} alt="" src={image} />
                        </div>
                      );

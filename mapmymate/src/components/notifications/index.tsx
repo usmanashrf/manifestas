@@ -11,7 +11,7 @@ export default function Notifications() {
     <div>
         {
             notificationsDummyData.map((item : notificaitonType,index)=>(
-            <motion.nav variants={eventMotions} initial="hidden" whileInView="show">
+            <motion.nav key={index} variants={eventMotions} initial="hidden" whileInView="show">
             <div key={index} className='bg-white opacity-100 rounded-md flex p-2 space-x-4 my-3'>
                 <div>
                 {

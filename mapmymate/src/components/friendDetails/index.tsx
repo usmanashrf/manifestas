@@ -3,6 +3,7 @@ import BasicInfo from "./BasicInfo";
 import { DataTable, columns } from "../basic/DataTable";
 import DataCard from "../basic/DataDetailCard";
 import ImagesSlider from "../basic/ImagesSlider";
+import Menu from "../menu/Menu";
 
 export default function FreindDetails(data:freindDetails) {
 
@@ -53,6 +54,9 @@ export default function FreindDetails(data:freindDetails) {
             <div className="md:mx-16 mx-2 text-lg font-bold text-[#0a3d62]">Photos</div>
             <ImagesSlider images = {data.Images}/>
         </div>
+        <div className="absolute z-10 bg-[#0a3d62] px-4 py-2 rounded flex ml-auto right-3 top-3">
+        <Menu />
+      </div>
     </div>
   )
 }

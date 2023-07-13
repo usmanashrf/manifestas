@@ -3,7 +3,7 @@ import Image from 'next/image';
 import logo from '/public/logo.png';
 import Notifications from '../notifications';
 import { useStateContext } from '@/lib/contextProvider';
-import Events from '../events';
+import Events from '../events-notifications';
 import Chat from '../chat';
 import AddFriends from '../addFriends';
 import Profile from '../profile';

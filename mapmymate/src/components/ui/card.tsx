@@ -2,7 +2,7 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-const Card = React.forwardRef<
+const Card :any = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -15,8 +15,9 @@ const Card = React.forwardRef<
     {...props}
   />
 ))
+Card.displayName = "Card";
 
-const CardHeader = React.forwardRef<
+const CardHeader:any = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -27,7 +28,9 @@ const CardHeader = React.forwardRef<
   />
 ))
 
-const CardTitle = React.forwardRef<
+CardHeader.displayName = "CardHeader";
+
+const CardTitle :any = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
@@ -40,8 +43,8 @@ const CardTitle = React.forwardRef<
     {...props}
   />
 ))
-
-const CardDescription = React.forwardRef<
+CardTitle.displayName = "CardTitle";
+const CardDescription :any = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -51,15 +54,17 @@ const CardDescription = React.forwardRef<
     {...props}
   />
 ))
+CardDescription.displayName = "CardDescription";
 
-const CardContent = React.forwardRef<
+const CardContent :any = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 ))
+CardContent.displayName ="CardContent";
 
-const CardFooter = React.forwardRef<
+const CardFooter :any = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -69,5 +74,5 @@ const CardFooter = React.forwardRef<
     {...props}
   />
 ))
-
+CardFooter.displayName = "CardFooter";
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
