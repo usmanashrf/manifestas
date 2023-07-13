@@ -5,8 +5,6 @@ import { useEffect, useState, useRef } from 'react';
 import friendsPins from "@/assets/FreindsPinsData";
 import { MdLocationOn } from "react-icons/md";
 import FriendsPopupCard from '../basic/FriendsPopupCard';
-import { Skeleton } from '../ui/skeleton';
-import Image from 'next/image';
 import eventsData from '@/assets/eventsDummyData';
 import EventsPopupCard from '../basic/EventsPopupCard';
 

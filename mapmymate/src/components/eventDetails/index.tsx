@@ -6,12 +6,14 @@ import Menu from "../menu/Menu";
 import { eventType } from "@/types/events";
 import eventImages from "@/assets/eventImages";
 import EventDrtialsCard from "../basic/EventDetailsCard";
+import BackToHome from "../ui/backToHome";
 
 export default function EventDetails(data : eventType) {
 
    
   return (
     <div className="flex flex-col">
+        <BackToHome/>
         {/* Basic Details will be here */}
           <div>
 

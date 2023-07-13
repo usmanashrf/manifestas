@@ -4,6 +4,7 @@ import { DataTable, columns } from "../basic/DataTable";
 import DataCard from "../basic/DataDetailCard";
 import ImagesSlider from "../basic/ImagesSlider";
 import Menu from "../menu/Menu";
+import BackToHome from "../ui/backToHome";
 
 export default function FreindDetails(data:freindDetails) {
 
@@ -24,6 +25,7 @@ export default function FreindDetails(data:freindDetails) {
 
   return (
     <div className="flex flex-col">
+        <BackToHome/>
         {/* Basic Details will be here */}
            <BasicInfo 
            firstName={data.firstName}
