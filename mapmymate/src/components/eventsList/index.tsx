@@ -9,6 +9,7 @@ import React from 'react'
 import { DatePickerWithRange } from '../ui/date-picker-with-range'
 import { DropdownCountryList } from './CountryList'
 import { Button } from '../ui/button'
+import AddNewEvent from './AddNewEvent'
 
 export default function Events() {
   return (
@@ -35,7 +36,7 @@ export default function Events() {
                 </motion.nav>))
         }
         <div className='absolute bottom-10'> 
-          <Button>Add New Event</Button>
+          <AddNewEvent/>
         </div>
     </div>
   )
