@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function EventDrtialsCard({data}:any) {
+export default function EventDetialsCard({data}:any) {
     return (
       <div className="container mx-auto p-4">
         <div className="rounded-lg bg-slate-50 shadow-lg p-6

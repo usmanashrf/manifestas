@@ -5,8 +5,8 @@ import ImagesSlider from "../basic/ImagesSlider";
 import Menu from "../menu/Menu";
 import { eventType } from "@/types/events";
 import eventImages from "@/assets/eventImages";
-import EventDrtialsCard from "../basic/EventDetailsCard";
 import BackToHome from "../ui/backToHome";
+import EventDetialsCard from "../basic/EventDetailsCard";
 
 export default function EventDetails(data : eventType) {
 
@@ -21,7 +21,7 @@ export default function EventDetails(data : eventType) {
         {/* Description part */}
         <div className="md:mx-12 mx-2 my-7">
             <div className="text-lg font-bold text-[#0a3d62]"> Event Details</div>
-            <EventDrtialsCard data={data}/>
+            <EventDetialsCard data={data}/>
             
         </div>
         {/* Images part */}
