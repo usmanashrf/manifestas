@@ -3,6 +3,7 @@ import { eventMotions } from '@/lib/motion'
 import { EventTypesList, eventType } from '@/types/events'
 import { motion } from 'framer-motion'
 import { CalendarCheck, CalendarClock, CalendarDays } from 'lucide-react'
+import Link from 'next/link'
 import router from 'next/router'
 import React from 'react'
 
@@ -13,7 +14,7 @@ export default function Events() {
             eventsData.map((item : eventType,index)=>(
             <motion.nav key={index} variants={eventMotions} initial="hidden" whileInView="show">
             <div key={index} className='bg-white opacity-100 rounded-md flex p-2 space-x-4 my-3'
-            onClick={() => router.push(`/event-details/${item.id}`)}>
+            ><Link className='flex space-x-3' href={`/event-details/${item.id}`}>
                 <div>
                     {
                         item.type === EventTypesList.ComingEvents ? (<CalendarClock/>)
@@ -25,6 +26,7 @@ export default function Events() {
                 <div>
                 {item.details}
                 </div>
+                </Link>
                 </div>
                 </motion.nav>))
         }
