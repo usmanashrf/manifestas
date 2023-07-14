@@ -27,7 +27,6 @@ export default function Events() {
                         (<CalendarDays/>)
                     }
                 </div>
-                
                 <div>
                 {item.details}
                 </div>
