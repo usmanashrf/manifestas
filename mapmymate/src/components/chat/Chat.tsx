@@ -35,7 +35,7 @@ export function Chat({name,img}:any) {
             </div>
         </SheetHeader>
         <div className="py-4 h-96 flex justify-center items-center">
-          Here you'll implement chat component
+          Here you&apos;ll implement chat component
         </div>
         <SheetFooter className="-ml-20">
         <Textarea placeholder="Type your message here." />
